@@ -1,0 +1,237 @@
+package com.evaldo.terminalperquisacliente.telasPerguntas;
+
+import android.content.Intent;
+import android.os.Handler;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.evaldo.terminalperquisacliente.R;
+import com.evaldo.terminalperquisacliente.activity.MainActivity;
+import com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity;
+import com.evaldo.terminalperquisacliente.classes.DispositivoKiosque;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
+
+import static com.evaldo.terminalperquisacliente.activity.PrincipalActivity.pularTela;
+import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.chamarTelaFinalAgradecimento;
+import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.contPerguntas;
+import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.contextDinamico;
+import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.decidirNumeroDaPerguntaETipoRespostasEChamarTelas;
+import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.decidirTipoDeTela;
+import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.dispositivoKiosque;
+import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntaAtual;
+import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntasQuestionario;
+import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.questionarioAtual;
+import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.verificarLimitePergunta;
+
+public class PerguntaEmotion3DivulgacaoActivity extends AppCompatActivity {
+
+
+    private ImageView exelente, razoavel, ruim;
+
+    private TextView tvPergunta;
+
+    private String pergunta = perguntaAtual;
+
+    private DatabaseReference reference, referenceKiosque;
+
+    DatabaseReference databaseReferencia = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference bancoRespostasQuestionarioReferencia = databaseReferencia.child("Banco Respostas Questionário");
+
+    public static String idRespostaQuestionario;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_perguntas_emotion3_divulgacao);
+
+       if ( verificarQuestionarioCarregado()){
+
+            carregandoInterface();
+            contextDinamico = this;
+
+        }
+    }
+
+
+
+    private boolean verificarQuestionarioCarregado() {
+
+        if (perguntasQuestionario == null) {
+
+            Toast.makeText(this, "Um erro inesperado aconteceu estamos reiniciando o aplicativo", Toast.LENGTH_LONG).show();
+
+            Intent intent = new Intent(this, MainActivity.class);
+            finish();
+            startActivity(intent);
+            return false;
+        }else {
+            return true;
+        }
+
+    }
+
+
+    private void carregandoInterface() {
+        exelente = (ImageView) findViewById(R.id.iv_excelente);
+        razoavel = (ImageView) findViewById(R.id.iv_razoavel);
+        ruim = (ImageView) findViewById(R.id.iv_ruim);
+        tvPergunta = findViewById(R.id.tv_pergunta3emotion);
+        tvPergunta.setText(pergunta);
+    }
+
+    private void chamarProximaTela() {
+        pularTela = 2;
+
+        contextDinamico = PerguntaEmotion3DivulgacaoActivity.this;
+
+        verificarLimitePergunta();
+
+        decidirNumeroDaPerguntaETipoRespostasEChamarTelas();
+
+        onPause();
+
+        decidirTipoDeTela(contextDinamico);
+    }
+
+    public void clickExelente3Emotion(View view) {
+        gerarIDRespostasQuestionario();
+
+        enviarPrimeiraRespostaQuestionario(pularTela + "." + pergunta, "(Exelente)");
+
+        chamarProximaTela();
+
+
+    }
+
+    public void clickRazoavel3Emotion(View view) {
+        onPause();
+        gerarIDRespostasQuestionario();
+
+        enviarPrimeiraRespostaQuestionario(pularTela + "." + pergunta, "(Razoável)");
+
+        chamarProximaTela();
+    }
+
+    public void clickRuim3Emotion(View view) {
+
+        gerarIDRespostasQuestionario();
+
+        enviarPrimeiraRespostaQuestionario(pularTela + "." + pergunta, "(Ruim)");
+
+        chamarProximaTela();
+    }
+
+    private void enviarPrimeiraRespostaQuestionario(String pergunta, String resposta) {
+
+        bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("hora").setValue(pegandoHora());
+        bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("administradorResponsavel").setValue(perguntasQuestionario.getAdministradorResponsavel());
+        bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("qtdPerguntas").setValue(contPerguntas);
+        bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("idDispositivo").setValue(pegarIDDispositivo());
+        bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("nomeQuestionario").setValue(questionarioAtual);
+        bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("pergunta" + pularTela).setValue(pergunta);
+        bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("resposta" + pularTela).setValue(resposta);
+        //pularTela+=1;
+    }
+
+    private void gerarIDRespostasQuestionario() {
+        idRespostaQuestionario = UUID.randomUUID().toString();
+    }
+
+    private String pegandoHora() {
+        SimpleDateFormat formataData = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat formatHora = new SimpleDateFormat("HH:mm:ss");
+        Date dataCal = new Date();
+        Date dataHora = new Date();
+        String dataFormatada = formataData.format(dataCal);
+        String horaFormatada = formatHora.format(dataHora);
+        String dataEHora = "Data " + dataFormatada + " Hora " + horaFormatada;
+        //System.out.println("Data " + dataFormatada + " Hora " + horaFormatada );
+
+        return dataEHora;
+    }
+
+    private String pegarIDDispositivo() {
+        String android_id = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+        return android_id;
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Você não pode sair dessa tela!", Toast.LENGTH_LONG).show();
+        System.out.println("Não pode volta!");
+    }
+
+
+    public void onclickReclamacoes(View view) {
+        Intent intent = new Intent(this, OuvidoriaReclamacoesActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void onclickSugestoes(View view) {
+        Intent intent = new Intent(this, OuvidoriaSugestoesActivity.class);
+        startActivity(intent);
+    }
+
+    public void onclickElogios(View view) {
+        Intent intent = new Intent(this, OuvidoriaElogiosActivity.class);
+        startActivity(intent);
+    }
+
+     /* @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_cliente_configuracao, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    //////////////////////////MENU CARREGANDO//////////////////////////////////////////////////////////////////////////////////////
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+           case R.id.item_voltar:
+
+               Toast.makeText(this, "VOCÊ JÁ ESTA NA PRIMEIRA PERGUNTA!", Toast.LENGTH_LONG).show();
+
+               return true;
+
+            case R.id.item_avancar:
+                gerarIDRespostasQuestionario();
+
+                Toast.makeText(this, "Avançar", Toast.LENGTH_LONG).show();
+
+                enviarPrimeiraRespostaQuestionario(pergunta,"(Não respondeu esta pergunta)");
+
+                onPause();
+
+                chamarProximaTela();
+
+                return true;
+
+            case R.id.item_configuracoes:
+
+                Toast.makeText(this, "Confirgurações", Toast.LENGTH_LONG).show();
+
+                return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }*/
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/papel_paredel"
+    android:orientation="vertical"
+    tools:context=".telasPerguntas.OuvidoriaSugestoesActivity">
+
+    <AutoCompleteTextView
+        android:id="@+id/tv_sugestao"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@android:color/background_light"
+        android:hint="Por favor digite sua Sugestão"
+        android:padding="8dp"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/bt_voltarElogio"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:onClick="clickVoltarSugestao"
+        android:padding="8dp"
+        android:text="VOLTAR"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/bt_enviarSugestao"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:onClick="clickEnviarSugestao"
+        android:padding="8dp"
+        android:text="ENVIAR "
+        android:textSize="30sp" />
+
+</LinearLayout>

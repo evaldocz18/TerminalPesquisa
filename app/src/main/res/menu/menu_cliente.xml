@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    menu_cliente.xml
+    <item
+        android:id="@+id/item_voltar"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="left"
+        android:gravity="left"
+        android:icon="@drawable/ic_voltar_24dp"
+        android:orderInCategory="0"
+        android:title="VOLTAR                                                                "
+        app:showAsAction="always|withText" />
+
+    <item
+        android:id="@+id/item_avancar"
+        android:layout_gravity="right"
+        android:gravity="right"
+        android:icon="@drawable/ic_avancar_24dp"
+        android:orderInCategory="1"
+        android:title="AVANÇAR"
+        app:showAsAction="always|withText" />
+
+    <item
+        android:id="@+id/item_configuracoes"
+        android:layout_gravity="right"
+        android:gravity="right"
+        android:icon="@drawable/ic_avancar_24dp"
+        android:orderInCategory="1"
+        android:title="CONFIGURAÇÕES (Somente administradores)"
+        app:showAsAction="never|withText" />
+</menu>

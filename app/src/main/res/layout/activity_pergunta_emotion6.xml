@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/papel_paredel"
+    tools:context=".activity.telasPerguntas.PerguntasEmotion6Activity">
+
+    <TextView
+        android:id="@+id/tv_pergunta_6emotion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:hint="Text View não carregou a pergunta"
+        android:padding="8dp"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_excelente6"
+        android:layout_width="600dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:onClick="clickExelente6Emotion"
+        android:padding="8dp"
+        android:paddingTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pergunta_6emotion"
+        app:srcCompat="@drawable/excelente_emotion" />
+
+    <ImageView
+        android:id="@+id/iv_bom6"
+        android:layout_width="500dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="clickBom6Emotion"
+        android:padding="8dp"
+        android:paddingTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_excelente6"
+        app:srcCompat="@drawable/bom_emotion" />
+
+    <ImageView
+        android:id="@+id/iv_razoavel6"
+        android:layout_width="586dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="clickRazoavel6Emotion"
+        android:padding="8dp"
+        android:paddingTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_bom6"
+        app:srcCompat="@drawable/medio_emotion" />
+
+    <ImageView
+        android:id="@+id/iv_ruim6"
+        android:layout_width="516dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="clickRuim6Emotion"
+        android:padding="8dp"
+        android:paddingTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_razoavel6"
+        app:srcCompat="@drawable/ruim_emotion" />
+
+    <ImageView
+        android:id="@+id/iv_pessimo6"
+        android:layout_width="578dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="clickPessimo6Emotion"
+        android:padding="8dp"
+        android:paddingTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_ruim6"
+        app:srcCompat="@drawable/pessimo_emotion" />
+</android.support.constraint.ConstraintLayout>

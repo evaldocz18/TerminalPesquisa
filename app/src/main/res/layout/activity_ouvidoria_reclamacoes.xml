@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/papel_paredel"
+    android:orientation="vertical"
+    tools:context=".telasPerguntas.OuvidoriaReclamacoesActivity">
+
+    <AutoCompleteTextView
+        android:id="@+id/tv_reclamacao"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@android:color/background_light"
+        android:hint="Por favor digite sua Reclamação"
+        android:padding="8dp"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/bt_voltarReclamacao"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:onClick="clickVoltarReclamacao"
+        android:padding="8dp"
+        android:text="VOLTAR"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/bt_enviarReclamacao"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:onClick="clickEnviarReclamacao"
+        android:padding="8dp"
+        android:text="ENVIAR "
+        android:textSize="30sp" />
+
+</LinearLayout>
