@@ -13,6 +13,8 @@ public class DispositivoKiosque implements Serializable {
         this.dataAtivacao = dataAtivacao;
         this.questionarioAtual = questionarioAtual;
 
+        //
+
     }
 
     public DispositivoKiosque(){}
