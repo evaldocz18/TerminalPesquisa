@@ -127,7 +127,7 @@ public class OuvidoriaReclamacoesActivity extends AppCompatActivity {
 
     public void clickVoltarReclamacao(View view) {
         chronometer.stop();
-        Intent intent = new Intent(this, PerguntaEmotion3DivulgacaoActivity.class);
+        Intent intent = new Intent(this, PerguntaPrimeiraEmotion3DivulgacaoActivity.class);
         finish();
         startActivity(intent);
     }

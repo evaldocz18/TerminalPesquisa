@@ -1,9 +1,6 @@
 package com.evaldo.terminalperquisacliente.telasPerguntas;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.CountDownTimer;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +10,6 @@ import android.widget.Toast;
 
 import com.evaldo.terminalperquisacliente.R;
 import com.evaldo.terminalperquisacliente.activity.MainActivity;
-import com.evaldo.terminalperquisacliente.util.DialogTimeoutListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -25,7 +21,7 @@ import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivit
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntaAtual;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntasQuestionario;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.verificarLimitePergunta;
-import static com.evaldo.terminalperquisacliente.telasPerguntas.PerguntaEmotion3DivulgacaoActivity.idRespostaQuestionario;
+import static com.evaldo.terminalperquisacliente.telasPerguntas.PerguntaPrimeiraEmotion3DivulgacaoActivity.idRespostaQuestionario;
 import static com.evaldo.terminalperquisacliente.util.DialogTimeoutListener.cronometro;
 import static com.evaldo.terminalperquisacliente.util.DialogTimeoutListener.cronometroChamarDialog;
 

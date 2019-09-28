@@ -41,7 +41,7 @@ import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivit
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.questionarioAtual;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.verificarLimitePergunta;
 
-public class PerguntaEmotion3DivulgacaoActivity extends AppCompatActivity {
+public class PerguntaPrimeiraEmotion3DivulgacaoActivity extends AppCompatActivity {
 
 
     private ImageView exelente, razoavel, ruim, divulgacaoDinamica;
@@ -79,7 +79,7 @@ public class PerguntaEmotion3DivulgacaoActivity extends AppCompatActivity {
     private void download_imagem() {
 
 
-        StorageReference reference = storage.getReference().child("imagem").child("divulgacao.gif");
+        StorageReference reference = storage.getReference().child("imagem").child("anuncie.png");
 
         reference.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
             @Override
@@ -147,7 +147,7 @@ public class PerguntaEmotion3DivulgacaoActivity extends AppCompatActivity {
     private void chamarProximaTela() {
         pularTela = 2;
 
-        contextDinamico = PerguntaEmotion3DivulgacaoActivity.this;
+        contextDinamico = PerguntaPrimeiraEmotion3DivulgacaoActivity.this;
 
         verificarLimitePergunta();
 

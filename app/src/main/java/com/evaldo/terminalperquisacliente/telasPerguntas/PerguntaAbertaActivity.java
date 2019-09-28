@@ -5,11 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
-import android.widget.AbsListView;
 import android.widget.AutoCompleteTextView;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +25,7 @@ import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivit
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntaAtual;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntasQuestionario;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.verificarLimitePergunta;
-import static com.evaldo.terminalperquisacliente.telasPerguntas.PerguntaEmotion3DivulgacaoActivity.idRespostaQuestionario;
+import static com.evaldo.terminalperquisacliente.telasPerguntas.PerguntaPrimeiraEmotion3DivulgacaoActivity.idRespostaQuestionario;
 
 public class PerguntaAbertaActivity extends AppCompatActivity {
 

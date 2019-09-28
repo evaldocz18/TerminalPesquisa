@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.evaldo.terminalperquisacliente.R;
-import com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity;
 import com.evaldo.terminalperquisacliente.util.Chronometer;
 import com.evaldo.terminalperquisacliente.util.Dialog;
 import com.google.firebase.database.DatabaseReference;
@@ -22,9 +21,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.chamarPrimeiraTela;
-import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.dispositivoKiosque;
-import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.iniciarGerenciamento;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntasQuestionario;
 
 public class OuvidoriaElogiosActivity extends AppCompatActivity {
@@ -131,7 +127,7 @@ public class OuvidoriaElogiosActivity extends AppCompatActivity {
 
     public void clickVoltarElogio(View view) {
         chronometer.stop();
-        Intent intent = new Intent(this, PerguntaEmotion3DivulgacaoActivity.class);
+        Intent intent = new Intent(this, PerguntaPrimeiraEmotion3DivulgacaoActivity.class);
         finish();
         startActivity(intent);
     }

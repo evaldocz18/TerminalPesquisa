@@ -21,7 +21,7 @@ import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivit
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntaAtual;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntasQuestionario;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.verificarLimitePergunta;
-import static com.evaldo.terminalperquisacliente.telasPerguntas.PerguntaEmotion3DivulgacaoActivity.idRespostaQuestionario;
+import static com.evaldo.terminalperquisacliente.telasPerguntas.PerguntaPrimeiraEmotion3DivulgacaoActivity.idRespostaQuestionario;
 import static com.evaldo.terminalperquisacliente.util.DialogTimeoutListener.cronometro;
 import static com.evaldo.terminalperquisacliente.util.DialogTimeoutListener.cronometroChamarDialog;
 

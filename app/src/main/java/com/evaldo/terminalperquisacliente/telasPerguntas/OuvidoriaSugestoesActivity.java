@@ -126,7 +126,7 @@ public class OuvidoriaSugestoesActivity extends AppCompatActivity {
     public void clickVoltarSugestao(View view) {
 
         chronometer.stop();
-        Intent intent = new Intent(this, PerguntaEmotion3DivulgacaoActivity.class);
+        Intent intent = new Intent(this, PerguntaPrimeiraEmotion3DivulgacaoActivity.class);
         finish();
         startActivity(intent);
     }

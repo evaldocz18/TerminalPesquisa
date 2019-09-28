@@ -17,7 +17,7 @@ import com.evaldo.terminalperquisacliente.classes.DispositivoKiosque;
 import com.evaldo.terminalperquisacliente.util.PerguntasDAO;
 import com.evaldo.terminalperquisacliente.classes.PerguntasQuestionario;
 import com.evaldo.terminalperquisacliente.telasPerguntas.PerguntaAbertaActivity;
-import com.evaldo.terminalperquisacliente.telasPerguntas.PerguntaEmotion3DivulgacaoActivity;
+import com.evaldo.terminalperquisacliente.telasPerguntas.PerguntaPrimeiraEmotion3DivulgacaoActivity;
 import com.evaldo.terminalperquisacliente.telasPerguntas.PerguntaEmotion6Activity;
 import com.evaldo.terminalperquisacliente.telasPerguntas.PerguntaSimOuNaoActivity;
 import com.evaldo.terminalperquisacliente.telasPerguntas.PerguntaTelefoneOuEmailActivity;
@@ -158,8 +158,7 @@ public class TelaGerenciadorActivity extends AppCompatActivity {
             System.out.println("Chamando a primeira tela obrigatoria tela 3 emotion");
 
             chamarPrimeiraTelaUmVez = false;
-
-            Intent intent1 = new Intent(context, PerguntaEmotion3DivulgacaoActivity.class);
+            Intent intent1 = new Intent(context, PerguntaPrimeiraEmotion3DivulgacaoActivity.class);
 
             context.startActivity(intent1);
             //finish();
@@ -363,7 +362,7 @@ public class TelaGerenciadorActivity extends AppCompatActivity {
     public static void decidirTipoDeTela(Context context) {
         System.out.println("decidirTipoDeTela");
 
-        Intent intent3emotion = new Intent(context, PerguntaEmotion3DivulgacaoActivity.class);
+        Intent intent3emotion = new Intent(context, PerguntaPrimeiraEmotion3DivulgacaoActivity.class);
         Intent intent6emotion = new Intent(context, PerguntaEmotion6Activity.class);
         Intent intentSimOuNao = new Intent(context, PerguntaSimOuNaoActivity.class);
         Intent intentAberta = new Intent(context, PerguntaAbertaActivity.class);

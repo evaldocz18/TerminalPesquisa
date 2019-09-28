@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".avisoDivulgacao.AcessoNegadoActivity"></activity>
+        <activity android:name=".telasPerguntas.PerguntaPrimeiraNPSActivity"></activity>
+        <activity android:name=".avisoDivulgacao.AcessoNegadoActivity" />
         <activity android:name=".avisoDivulgacao.InativoActivity" />
         <activity android:name=".telasPerguntas.TelaFinalAgradecimentoActivity" />
         <activity android:name=".telasPerguntas.OuvidoriaReclamacoesActivity" />
@@ -27,7 +28,7 @@
         <activity android:name=".telasPerguntas.PerguntaAbertaActivity" />
         <activity android:name=".telasPerguntas.PerguntaSimOuNaoActivity" />
         <activity android:name=".telasPerguntas.PerguntaEmotion6Activity" />
-        <activity android:name=".telasPerguntas.PerguntaEmotion3DivulgacaoActivity" />
+        <activity android:name=".telasPerguntas.PerguntaPrimeiraEmotion3DivulgacaoActivity" />
         <activity android:name=".activity.TelaGerenciadorActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>

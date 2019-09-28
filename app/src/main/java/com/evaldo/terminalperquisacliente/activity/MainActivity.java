@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.evaldo.terminalperquisacliente.R;
+import com.evaldo.terminalperquisacliente.telasPerguntas.PerguntaPrimeiraNPSActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void chamarTela() {
-        Intent intent = new Intent(this, PrincipalActivity.class);
+        Intent intent = new Intent(this, PerguntaPrimeiraNPSActivity.class);
         onStop();
         startActivity(intent);
     }
