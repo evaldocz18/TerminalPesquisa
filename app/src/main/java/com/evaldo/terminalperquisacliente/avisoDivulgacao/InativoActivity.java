@@ -1,4 +1,4 @@
-package com.evaldo.terminalperquisacliente.activity;
+package com.evaldo.terminalperquisacliente.avisoDivulgacao;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

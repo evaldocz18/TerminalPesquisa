@@ -1,9 +1,11 @@
 package com.evaldo.terminalperquisacliente.telasPerguntas;
 
 import android.content.Intent;
-import android.os.Handler;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,27 +13,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.evaldo.terminalperquisacliente.R;
 import com.evaldo.terminalperquisacliente.activity.MainActivity;
-import com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity;
-import com.evaldo.terminalperquisacliente.classes.DispositivoKiosque;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
 import static com.evaldo.terminalperquisacliente.activity.PrincipalActivity.pularTela;
-import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.chamarTelaFinalAgradecimento;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.contPerguntas;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.contextDinamico;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.decidirNumeroDaPerguntaETipoRespostasEChamarTelas;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.decidirTipoDeTela;
-import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.dispositivoKiosque;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntaAtual;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntasQuestionario;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.questionarioAtual;
@@ -40,7 +44,7 @@ import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivit
 public class PerguntaEmotion3DivulgacaoActivity extends AppCompatActivity {
 
 
-    private ImageView exelente, razoavel, ruim;
+    private ImageView exelente, razoavel, ruim, divulgacaoDinamica;
 
     private TextView tvPergunta;
 
@@ -53,19 +57,64 @@ public class PerguntaEmotion3DivulgacaoActivity extends AppCompatActivity {
 
     public static String idRespostaQuestionario;
 
+    private FirebaseStorage storage = FirebaseStorage.getInstance();
+    String url;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perguntas_emotion3_divulgacao);
 
-       if ( verificarQuestionarioCarregado()){
+        if (verificarQuestionarioCarregado()) {
 
             carregandoInterface();
             contextDinamico = this;
 
         }
+
+        download_imagem();
     }
 
+    private void download_imagem() {
+
+
+        StorageReference reference = storage.getReference().child("imagem").child("divulgacao.gif");
+
+        reference.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+            @Override
+            public void onComplete(@NonNull Task<Uri> task) {
+
+                if (task.isSuccessful()) {
+
+                    url = task.getResult().toString();
+
+                    download_gif_url(url);
+
+                }
+            }
+        });
+    }
+
+    private void download_gif_url(String url) {
+
+
+        Glide.with(this).load(url).listener(new RequestListener<Drawable>() {
+            @Override
+            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+               // progressBar.setVisibility(View.GONE);
+
+                return false;
+            }
+
+            @Override
+            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+              //  progressBar.setVisibility(View.GONE);
+
+                return false;
+            }
+        }).into(divulgacaoDinamica);
+    }
 
 
     private boolean verificarQuestionarioCarregado() {
@@ -78,7 +127,7 @@ public class PerguntaEmotion3DivulgacaoActivity extends AppCompatActivity {
             finish();
             startActivity(intent);
             return false;
-        }else {
+        } else {
             return true;
         }
 
@@ -89,6 +138,8 @@ public class PerguntaEmotion3DivulgacaoActivity extends AppCompatActivity {
         exelente = (ImageView) findViewById(R.id.iv_excelente);
         razoavel = (ImageView) findViewById(R.id.iv_razoavel);
         ruim = (ImageView) findViewById(R.id.iv_ruim);
+        divulgacaoDinamica = (ImageView) findViewById(R.id.iv_divulgacao);
+
         tvPergunta = findViewById(R.id.tv_pergunta3emotion);
         tvPergunta.setText(pergunta);
     }

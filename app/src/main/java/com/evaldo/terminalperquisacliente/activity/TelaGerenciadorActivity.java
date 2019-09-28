@@ -128,7 +128,7 @@ public class TelaGerenciadorActivity extends AppCompatActivity {
                     if (data.child("idDispositivo").getValue().equals(pegarIDDispositivo())) {
 
                         dispositivoKiosque = data.getValue(DispositivoKiosque.class);
-                        if (dispositivoKiosque.getStatus(""))
+                        //if (dispositivoKiosque.getStatus(""))
                         questionarioAtual = dispositivoKiosque.getQuestionarioAtual();
 
                         firebaseLocalizarQuestionario();
