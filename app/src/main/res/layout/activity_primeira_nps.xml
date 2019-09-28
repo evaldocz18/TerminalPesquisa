@@ -16,10 +16,9 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:hint="Qual o seu nível de satisfação com a nossa loja?"
         android:padding="8dp"
-        android:text="Text View não carregou a pergunta"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:text="Qual o seu nível de satisfação com a nossa instituição?"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="50dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,8 +68,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:orientation="horizontal"
@@ -83,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/nps0" />
 
         <ImageView
@@ -91,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/nps1" />
 
         <ImageView
@@ -99,7 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/nps2" />
 
         <ImageView
@@ -107,7 +104,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/nps3" />
 
         <ImageView
@@ -115,7 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/nps4" />
 
         <ImageView
@@ -123,7 +120,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/nps5" />
 
         <ImageView
@@ -131,7 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/nps6" />
 
         <ImageView
@@ -139,7 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/nps7" />
 
         <ImageView
@@ -147,7 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/nps8" />
 
         <ImageView
@@ -155,7 +152,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/nps9" />
 
         <ImageView
@@ -163,7 +160,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/nps10" />
 
     </LinearLayout>
