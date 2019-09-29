@@ -108,7 +108,7 @@ public class PerguntaSimOuNaoActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "VOLTAR", Toast.LENGTH_SHORT).show();
+       /* Toast.makeText(this, "VOLTAR", Toast.LENGTH_SHORT).show();
 
         cronometro.cancel();
 
@@ -120,7 +120,7 @@ public class PerguntaSimOuNaoActivity extends AppCompatActivity {
 
         decidirTipoDeTela(contextAnterior);
 
-        finish();
+        finish();*/
 
 
     }

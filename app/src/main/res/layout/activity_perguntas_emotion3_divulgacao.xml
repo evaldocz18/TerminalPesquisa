@@ -8,18 +8,6 @@
     tools:context=".activity.perguntas.PerguntasEmotion3DivulgacaoActivity"
     tools:layout_editor_absoluteY="89dp">
 
-    <ImageView
-        android:id="@+id/iv_divulgacao"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/iv_sugestoes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/tv_pergunta3emotion"
         android:layout_width="0dp"
@@ -74,6 +62,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_razoavel"
         app:srcCompat="@drawable/pessimo_emotion" />
+
+    <ImageView
+        android:id="@+id/iv_divulgacao"
+        android:layout_width="0dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_sugestoes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_ruim" />
 
     <ImageView
         android:id="@+id/iv_elogios"

@@ -177,7 +177,11 @@ public class PerguntaAbertaActivity extends AppCompatActivity {
     }
 
     public void clickBotaoEnviarComentario(View view) {
-        respostaAberta = "(" + respostaAberta + "" + ACTVRespostaAberta.getText() + ")";
+        if (ACTVRespostaAberta.getText().toString().equals(null) || ACTVRespostaAberta.getText().toString().equals("")) {
+            respostaAberta = "(null)";
+        }else{
+            respostaAberta = "(" + ACTVRespostaAberta.getText() + ")";
+        }
         enviarQuestionario(pularTela + "." + pergunta, respostaAberta);
         chamarProximaTela();
     }
@@ -189,9 +193,9 @@ public class PerguntaAbertaActivity extends AppCompatActivity {
         bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("resposta" + pularTela).setValue(resposta);
     }
 
-    /*@Override
+    @Override
     public void onBackPressed() {
-        Toast.makeText(this, "VOLTAR", Toast.LENGTH_SHORT).show();
+        /*Toast.makeText(this, "VOLTAR", Toast.LENGTH_SHORT).show();
 
         pularTela--;
 
@@ -201,7 +205,7 @@ public class PerguntaAbertaActivity extends AppCompatActivity {
 
         decidirTipoDeTela(contextAnterior);
 
-        finish();
-    }*/
+        finish();*/
+    }
 
 }

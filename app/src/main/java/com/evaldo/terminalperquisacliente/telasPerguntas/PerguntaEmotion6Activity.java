@@ -136,19 +136,19 @@ public class PerguntaEmotion6Activity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "VOLTAR", Toast.LENGTH_SHORT).show();
+       /* Toast.makeText(this, "VOLTAR", Toast.LENGTH_SHORT).show();
 
         pularTela--;
 
         cronometro.cancel();
 
-        /*verificarLimitePergunta();
+        verificarLimitePergunta();
 
         decidirNumeroDaPerguntaETipoRespostasEChamarTelas();
 
-        decidirTipoDeTela(contextAnterior);*/
+        decidirTipoDeTela(contextAnterior);
 
-        finish();
+        finish();*/
     }
 
 

@@ -79,7 +79,7 @@ public class PerguntaPrimeiraEmotion3DivulgacaoActivity extends AppCompatActivit
     private void download_imagem() {
 
 
-        StorageReference reference = storage.getReference().child("imagem").child("anuncie.png");
+        StorageReference reference = storage.getReference().child("imagem").child("master.gif");
 
         reference.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
             @Override
