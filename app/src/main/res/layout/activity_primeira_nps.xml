@@ -17,7 +17,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:padding="8dp"
-        android:text="Qual o seu nível de satisfação com a nossa instituição?"
+        android:text="Como você avalia nosso evento?"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="50dp"
@@ -65,7 +65,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
@@ -77,90 +77,101 @@
 
         <ImageView
             android:id="@+id/imageViewNPS0"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             app:srcCompat="@drawable/nps0" />
 
         <ImageView
             android:id="@+id/imageViewNPS1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             app:srcCompat="@drawable/nps1" />
 
         <ImageView
             android:id="@+id/imageViewNPS2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             app:srcCompat="@drawable/nps2" />
 
         <ImageView
             android:id="@+id/imageViewNPS3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             app:srcCompat="@drawable/nps3" />
 
         <ImageView
             android:id="@+id/imageViewNPS4"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             app:srcCompat="@drawable/nps4" />
 
         <ImageView
             android:id="@+id/imageViewNPS5"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             app:srcCompat="@drawable/nps5" />
 
         <ImageView
             android:id="@+id/imageViewNPS6"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             app:srcCompat="@drawable/nps6" />
 
         <ImageView
             android:id="@+id/imageViewNPS7"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             app:srcCompat="@drawable/nps7" />
 
         <ImageView
             android:id="@+id/imageViewNPS8"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             app:srcCompat="@drawable/nps8" />
 
         <ImageView
             android:id="@+id/imageViewNPS9"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             app:srcCompat="@drawable/nps9" />
 
         <ImageView
             android:id="@+id/imageViewNPS10"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             app:srcCompat="@drawable/nps10" />
 
     </LinearLayout>
@@ -179,6 +190,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:srcCompat="@drawable/anuncie" />
+        app:srcCompat="@drawable/edesign" />
 
 </android.support.constraint.ConstraintLayout>

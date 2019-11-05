@@ -19,6 +19,8 @@ public class TelaFinalAgradecimento2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_final_agradecimento2);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         splashScreen();
 
         ReiniciarContadorDeTelas();

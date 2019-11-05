@@ -65,8 +65,8 @@
 
     <ImageView
         android:id="@+id/iv_divulgacao"
-        android:layout_width="0dp"
-        android:layout_height="230dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -75,7 +75,8 @@
         app:layout_constraintBottom_toTopOf="@+id/iv_sugestoes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_ruim" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_ruim"
+        app:srcCompat="@drawable/logo_direito" />
 
     <ImageView
         android:id="@+id/iv_elogios"
