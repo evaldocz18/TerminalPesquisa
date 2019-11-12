@@ -122,8 +122,9 @@ public class TelaGerenciadorActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
-
-                    if (data.child("id").getValue().equals(pegarIDDispositivo())) {
+                    System.out.println("--------------------data.child(idDispositivo)= " + data.child("idDispositivo") );
+                    System.out.println("---------------------equals(pegarIDDispositivo())= " + equals(pegarIDDispositivo()));
+                    if (data.child("idDispositivo").getValue().equals(pegarIDDispositivo())) {
 
                         terminalPesquisa = data.getValue(TerminalPesquisa.class);
                         //if (terminalPesquisa.getStatus(""))
@@ -135,7 +136,7 @@ public class TelaGerenciadorActivity extends AppCompatActivity {
 
                     } else {
 
-                        System.out.println("Não achou o dispositivo " + data.child("id").getValue().equals(pegarIDDispositivo()));
+                        //System.out.println("Não achou o dispositivo " + data.child("id").getValue().equals(pegarIDDispositivo()));
 
                     }
                 }
