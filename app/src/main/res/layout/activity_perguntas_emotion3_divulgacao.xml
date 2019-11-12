@@ -75,8 +75,7 @@
         app:layout_constraintBottom_toTopOf="@+id/iv_sugestoes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_ruim"
-        app:srcCompat="@drawable/logo_direito" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_ruim" />
 
     <ImageView
         android:id="@+id/iv_elogios"

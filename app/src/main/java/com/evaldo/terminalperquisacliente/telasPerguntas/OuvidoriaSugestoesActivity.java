@@ -20,7 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.dispositivoKiosque;
+import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.terminalPesquisa;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntasQuestionario;
 
 
@@ -179,7 +179,7 @@ public class OuvidoriaSugestoesActivity extends AppCompatActivity {
 
             bancoOuvidoriaReferencia.child("Sugestoes").child("id").child(idSugestao).child("hora").setValue(pegandoHora());
             bancoOuvidoriaReferencia.child("Sugestoes").child("id").child(idSugestao).child("administradorResponsavel").setValue(perguntasQuestionario.getAdministradorResponsavel());
-            bancoOuvidoriaReferencia.child("Sugestoes").child("id").child(idSugestao).child("idDispositivo").setValue(dispositivoKiosque.getIdDispositivo());
+            bancoOuvidoriaReferencia.child("Sugestoes").child("id").child(idSugestao).child("idDispositivo").setValue(terminalPesquisa.getIdDispositivo());
             bancoOuvidoriaReferencia.child("Sugestoes").child("id").child(idSugestao).child("resposta").setValue(sugestao.getText().toString());
 
 

@@ -20,7 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.dispositivoKiosque;
+import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.terminalPesquisa;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntasQuestionario;
 
 public class OuvidoriaReclamacoesActivity extends AppCompatActivity {
@@ -180,7 +180,7 @@ public class OuvidoriaReclamacoesActivity extends AppCompatActivity {
 
             bancoOuvidoriaReferencia.child("Reclamacoes").child("id").child(idReclamacao).child("hora").setValue(pegandoHora());
             bancoOuvidoriaReferencia.child("Reclamacoes").child("id").child(idReclamacao).child("administradorResponsavel").setValue(perguntasQuestionario.getAdministradorResponsavel());
-            bancoOuvidoriaReferencia.child("Reclamacoes").child("id").child(idReclamacao).child("idDispositivo").setValue(dispositivoKiosque.getIdDispositivo());
+            bancoOuvidoriaReferencia.child("Reclamacoes").child("id").child(idReclamacao).child("idDispositivo").setValue(terminalPesquisa.getIdDispositivo());
             bancoOuvidoriaReferencia.child("Reclamacoes").child("id").child(idReclamacao).child("resposta").setValue(reclamacao.getText().toString());
 
 

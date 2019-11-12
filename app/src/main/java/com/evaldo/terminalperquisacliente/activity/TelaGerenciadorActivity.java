@@ -13,7 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.evaldo.terminalperquisacliente.R;
-import com.evaldo.terminalperquisacliente.classes.DispositivoKiosque;
+import com.evaldo.terminalperquisacliente.classes.TerminalPesquisa;
 import com.evaldo.terminalperquisacliente.util.PerguntasDAO;
 import com.evaldo.terminalperquisacliente.classes.PerguntasQuestionario;
 import com.evaldo.terminalperquisacliente.telasPerguntas.PerguntaAbertaActivity;
@@ -34,7 +34,7 @@ import static com.evaldo.terminalperquisacliente.activity.PrincipalActivity.pula
 
 public class TelaGerenciadorActivity extends AppCompatActivity {
     //Iniciando o firebase
-    private DatabaseReference referencePerguntas, referenceKiosque;
+    private DatabaseReference referencePerguntas, referenceTerminal;
     private ProgressBar progressBar;
     private Drawable progressDrawable;
 
@@ -51,7 +51,7 @@ public class TelaGerenciadorActivity extends AppCompatActivity {
     //Quem deve setar o questionario atual é o administrador AINDA FALTA FAZER!
     public static String questionarioAtual;
     public static PerguntasQuestionario perguntasQuestionario;
-    public static DispositivoKiosque dispositivoKiosque;
+    public static TerminalPesquisa terminalPesquisa;
 
 
     @Override
@@ -65,7 +65,7 @@ public class TelaGerenciadorActivity extends AppCompatActivity {
 
 
         if (conexaoAtiva) {
-            firebaseLocalizarKiosque();
+            firebaseLocalizarTerminal();
 
         } else if (!conexaoAtiva && perguntasQuestionario != null){
 
@@ -113,23 +113,21 @@ public class TelaGerenciadorActivity extends AppCompatActivity {
 
     }
 
-    private void firebaseLocalizarKiosque() {
+    private void firebaseLocalizarTerminal() {
 
-
-        System.out.println("iniciarFirebeDispositivoKioque");
-        referenceKiosque = FirebaseDatabase.getInstance().getReference().child("Dispositivos Kiosque").child("idDispositivo");
-        referenceKiosque.addValueEventListener(new ValueEventListener() {
+        referenceTerminal = FirebaseDatabase.getInstance().getReference().child("Terminais de Pesquisa").child("id");
+        referenceTerminal.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
 
-                    if (data.child("idDispositivo").getValue().equals(pegarIDDispositivo())) {
+                    if (data.child("id").getValue().equals(pegarIDDispositivo())) {
 
-                        dispositivoKiosque = data.getValue(DispositivoKiosque.class);
-                        //if (dispositivoKiosque.getStatus(""))
-                        questionarioAtual = dispositivoKiosque.getQuestionarioAtual();
+                        terminalPesquisa = data.getValue(TerminalPesquisa.class);
+                        //if (terminalPesquisa.getStatus(""))
+                        questionarioAtual = terminalPesquisa.getQuestionarioAtual();
 
                         firebaseLocalizarQuestionario();
 
@@ -137,7 +135,7 @@ public class TelaGerenciadorActivity extends AppCompatActivity {
 
                     } else {
 
-                        System.out.println("Não achou o dispositivo " + data.child("idDispositivo").getValue().equals(pegarIDDispositivo()));
+                        System.out.println("Não achou o dispositivo " + data.child("id").getValue().equals(pegarIDDispositivo()));
 
                     }
                 }

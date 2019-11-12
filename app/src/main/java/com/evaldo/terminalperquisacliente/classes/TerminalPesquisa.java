@@ -2,10 +2,10 @@ package com.evaldo.terminalperquisacliente.classes;
 
 import java.io.Serializable;
 
-public class DispositivoKiosque implements Serializable {
+public class TerminalPesquisa implements Serializable {
     String nomeDispositivo,idDispositivo, status,key, dataAtivacao, questionarioAtual ;
 
-    public DispositivoKiosque(String nomeDispositivo, String idDispositivo, String status, String key, String dataAtivacao, String questionarioAtual) {
+    public TerminalPesquisa(String nomeDispositivo, String idDispositivo, String status, String key, String dataAtivacao, String questionarioAtual) {
         this.nomeDispositivo = nomeDispositivo;
         this.idDispositivo = idDispositivo;
         this.status = status;
@@ -16,7 +16,7 @@ public class DispositivoKiosque implements Serializable {
 
     }
 
-    public DispositivoKiosque(){}
+    public TerminalPesquisa(){}
 
     public String getNomeDispositivo() {
         return nomeDispositivo;
@@ -68,7 +68,7 @@ public class DispositivoKiosque implements Serializable {
 
     @Override
     public String toString() {
-        return "DispositivoKiosque{" +
+        return "TerminalPesquisa{" +
                 "nomeDispositivo='" + nomeDispositivo + '\'' +
                 ", idDispositivo='" + idDispositivo + '\'' +
                 ", status='" + status + '\'' +

@@ -80,7 +80,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
                                 System.out.println("Tem internet!!!!!");
                                 if (chamarPrimeiraTelaUmVez) {
-                                    //Toast.makeText(PrincipalActivity.this, "TOTEM CONECTADO COM A INTERNET", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(PrincipalActivity.this, "TOTEM CONECTADO COM A INTERNET", Toast.LENGTH_LONG).show();
                                 }
                                 conexao = true;
 
