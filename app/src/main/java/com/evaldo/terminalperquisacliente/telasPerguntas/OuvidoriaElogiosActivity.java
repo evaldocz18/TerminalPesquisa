@@ -23,6 +23,7 @@ import java.util.Date;
 import java.util.UUID;
 
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntasQuestionario;
+import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.terminalPesquisa;
 
 public class OuvidoriaElogiosActivity extends AppCompatActivity {
 
@@ -43,7 +44,7 @@ public class OuvidoriaElogiosActivity extends AppCompatActivity {
 
         chronometer();
 
-        verificarUsuarioEstaDigitando();
+        //verificarUsuarioEstaDigitando();
 
 
 
@@ -179,8 +180,10 @@ public class OuvidoriaElogiosActivity extends AppCompatActivity {
             DatabaseReference bancoOuvidoriaReferencia = databaseReferencia.child("Banco Ouvidoria");
 
             bancoOuvidoriaReferencia.child("Elogios").child("id").child(idElogio).child("hora").setValue(pegandoHora());
-            bancoOuvidoriaReferencia.child("Elogios").child("id").child(idElogio).child("administradorResponsavel").setValue(perguntasQuestionario.getAdministradorResponsavel());
+            bancoOuvidoriaReferencia.child("Elogios").child("id").child(idElogio).child("nomeDispositivo").setValue(terminalPesquisa.getNomeDispositivo());
             bancoOuvidoriaReferencia.child("Elogios").child("id").child(idElogio).child("idDispositivo").setValue(pegarIDDispositivo());
+            bancoOuvidoriaReferencia.child("Elogios").child("id").child(idElogio).child("nomeFuncionario").setValue(terminalPesquisa.get);
+            bancoOuvidoriaReferencia.child("Elogios").child("id").child(idElogio).child("emailFuncionario").setValue(perguntasQuestionario.getAdministradorResponsavel());
             bancoOuvidoriaReferencia.child("Elogios").child("id").child(idElogio).child("resposta").setValue(elogio.getText().toString());
         }
 

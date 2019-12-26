@@ -21,6 +21,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.evaldo.terminalperquisacliente.R;
 import com.evaldo.terminalperquisacliente.activity.MainActivity;
+import com.evaldo.terminalperquisacliente.classes.TerminalPesquisa;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
@@ -40,6 +41,7 @@ import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivit
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntaAtual;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.perguntasQuestionario;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.questionarioAtual;
+import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.terminalPesquisa;
 import static com.evaldo.terminalperquisacliente.activity.TelaGerenciadorActivity.verificarLimitePergunta;
 
 public class PerguntaPrimeiraEmotion3DivulgacaoActivity extends AppCompatActivity {
@@ -52,6 +54,8 @@ public class PerguntaPrimeiraEmotion3DivulgacaoActivity extends AppCompatActivit
     private String pergunta = perguntaAtual;
 
     private DatabaseReference reference, referenceKiosque;
+
+    //static TerminalPesquisa terminalPesquisa = new TerminalPesquisa("Dispositivo teste","idteste", "ATIVADO","Data 20-11-2019 Hora 13:31:56", questionarioAtual );
 
     DatabaseReference databaseReferencia = FirebaseDatabase.getInstance().getReference();
     DatabaseReference bancoRespostasQuestionarioReferencia = databaseReferencia.child("Banco Respostas Questionário");
@@ -79,7 +83,7 @@ public class PerguntaPrimeiraEmotion3DivulgacaoActivity extends AppCompatActivit
 
         }
 
-        // download_imagem();
+        //download_imagem();
     }
 
     private void modeFullScreen() {
@@ -125,7 +129,7 @@ public class PerguntaPrimeiraEmotion3DivulgacaoActivity extends AppCompatActivit
     private void download_imagem() {
 
 
-        StorageReference reference = storage.getReference().child("imagem").child("master.jpeg3");
+        StorageReference reference = storage.getReference().child("imagem").child("master.jpeg");
 
         reference.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
             @Override
@@ -237,7 +241,8 @@ public class PerguntaPrimeiraEmotion3DivulgacaoActivity extends AppCompatActivit
         bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("hora").setValue(pegandoHora());
         bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("administradorResponsavel").setValue(perguntasQuestionario.getAdministradorResponsavel());
         bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("qtdPerguntas").setValue(contPerguntas);
-        bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("idDispositivo").setValue(pegarIDDispositivo());
+        bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("nomeDispositivo").setValue(terminalPesquisa.getNomeDispositivo());
+        bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("idDispositivo").setValue(terminalPesquisa.getIdDispositivo());
         bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("nomeQuestionario").setValue(questionarioAtual);
         bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("pergunta" + pularTela).setValue(pergunta);
         bancoRespostasQuestionarioReferencia.child("id").child(idRespostaQuestionario).child("resposta" + pularTela).setValue(resposta);
