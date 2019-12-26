@@ -75,6 +75,8 @@ public class TelaGerenciadorActivity extends AppCompatActivity {
             iniciarGerenciamento(TelaGerenciadorActivity.this);
         }
 
+
+
     }
 
     private void verificarInternet() {

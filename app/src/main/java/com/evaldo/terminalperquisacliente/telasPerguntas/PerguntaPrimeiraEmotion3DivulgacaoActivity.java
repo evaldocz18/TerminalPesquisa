@@ -56,6 +56,7 @@ public class PerguntaPrimeiraEmotion3DivulgacaoActivity extends AppCompatActivit
     DatabaseReference databaseReferencia = FirebaseDatabase.getInstance().getReference();
     DatabaseReference bancoRespostasQuestionarioReferencia = databaseReferencia.child("Banco Respostas Questionário");
 
+
     public static String idRespostaQuestionario;
 
     private FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -68,6 +69,7 @@ public class PerguntaPrimeiraEmotion3DivulgacaoActivity extends AppCompatActivit
         setContentView(R.layout.activity_perguntas_emotion3_divulgacao);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
 
         if (verificarQuestionarioCarregado()) {
